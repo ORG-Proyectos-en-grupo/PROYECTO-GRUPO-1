@@ -25,6 +25,7 @@ deben solicitar: código, nombres, apellidos y fecha de nacimiento (año, mes y 
 using namespace std;
 
 
+//Primer Arbol por Fecha del estudiante.
 struct Student {
     int id;
     char nombre[40];
@@ -34,9 +35,8 @@ struct Student {
     int dia;
     Student *iza, *der;
 };
- Student*raiz,*aux, *aux2;
-
-
+ Student*raiz= NULL,*aux, *aux2;
+ 
 int posicionar() {
     while (true) {
         if (aux->id < aux2->id) {
@@ -53,7 +53,14 @@ int posicionar() {
                 aux2->der = aux;
                 break;
             }
-        } else if (aux->anio < aux2->anio || 
+        } 
+    }
+    return 0;
+}
+
+int posicionarB(){
+    while (true) {
+            if (aux->anio < aux2->anio || 
                    (aux->anio == aux2->anio && aux->mes < aux2->mes) ||
                    (aux->anio == aux2->anio && aux->mes == aux2->mes && aux->dia < aux2->dia)) {
             if (aux2->iza != NULL) {
@@ -62,106 +69,188 @@ int posicionar() {
                 aux2->iza = aux;
                 break;
             }
-        } else {
+        }     else {
             if (aux2->der != NULL) {
                 aux2 = aux2->der;
             } else {
                 aux2->der = aux;
                 break;
             }
+        }  
+}return 0;}
+
+int RegistrarEstudiante() {
+    int i = 0;
+    cout << "Bienvenido al área de registro" << endl;
+    cout << "\n";
+
+    do {
+        aux = (struct Student *)malloc(sizeof(struct Student));
+        cout << "Ingresa el nombre del estudiante: " << endl;
+        cin >> aux->nombre;
+        cout << "\n";
+
+        cout << "Ingresa el apellido del estudiante: " << endl;
+        cin >> aux->apellido;
+        cout << "\n";
+
+        cout << "Fecha de nacimiento del estudiante (ingresa solo números):" << endl;
+        system("pause");
+        cout << "\n";
+
+        cout << "Día:" << endl;
+        cin >> aux->dia;
+        cout << "\n";
+        cout << "Mes:" << endl;
+        cin >> aux->mes;
+        cout << "\n";
+        cout << "Año:" << endl;
+        cin >> aux->anio;
+        cout << "\n";
+
+        cout << "Ingresa el código del estudiante:" << endl;
+        cin >> aux->id;
+        cout << "\n";
+
+        aux->iza = aux->der = NULL;
+
+        if (raiz == NULL) {
+            raiz = aux;
+            aux = NULL;
+            free(aux);
+        } else { 
+            aux2 = raiz;
+            posicionar();
         }
-    }
+        cout << "\n";
+        cout << "Estudiante Registrado." << endl;
+        system("pause");
+        cout << "¿Desea registrar otro estudiante? (1.SI/2.NO)";
+        cin >> i;
+        cout << "\n";
+    } while (i != 2);
     return 0;
 }
 
-int registrarEstudiante (){
-   aux = (struct Student *)malloc(sizeof(struct Student));   
-    cout << "Ingrese un codigo del Estudiante: ";
-    cin >> aux->id;     
-    cout << "Ingrese el nombre del Estudiante: ";
-    cin >> aux->nombre;
-    cout << "Ingrese el apellido del Estudiante: ";
-    cin >> aux->apellido;
-    cout << "Ingrese el año de nacimiento del estudiante: ";
-    cin >> aux->anio;
-    cout << "Ingrese el mes de nacimiento del estudiante: ";
-    cin >> aux->mes;
-    cout << "Ingrese el día de nacimiento del estudiante: ";
-    cin >> aux->dia;
-    aux->iza = aux->der = NULL;
-   
-    if(raiz ==NULL){
-        raiz= aux;
-        aux = NULL;
-    }
-    else{
-        aux2=raiz;
-        posicionar();
-    }
+int preorden (Student*recursive) {
+ cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
+             << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl;
+    cout<<"\n";
+    cout<<"----------------------------------------------------------"<<endl;
+    cout<<"\n";
+if(recursive -> iza != NULL)
+preorden (recursive->iza);
+if(recursive -> der != NULL)
+preorden (recursive -> der);
+return 0;}
+
+int inorden(Student*recursive) {
+if (recursive-> iza != NULL) 
+inorden(aux->iza); 
+        cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
+        << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl;
+        cout<<"\n";
+        cout <<"***********************************************************************************"<< endl;
+        cout<<"\n";
+if(recursive->der!=NULL){ inorden(recursive->der);}
 return 0;
 }
 
-void inorden(Student* aux) {
-    if (aux != NULL) {
-        inorden(aux->iza); 
-        cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
-             << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl; 
-        inorden(aux->der); 
-    }
+int postorden(Student*recursive) {
+if (recursive-> iza != NULL)
+postorden(aux->iza); 
+postorden(aux->der); 
+cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
+             << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl;
+        cout <<"***********************************************************************************"<< endl;
+        cout<<"\n"<< endl; 
+        cout<<"\n";
+return 0;
 }
 
-void preorden(Student* aux) {
-    if (aux != NULL) {
-        cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
-             << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl; 
-        preorden(aux->iza); 
-        preorden(aux->der); 
+int recorrer(){
+	  int iu = 0;
+    	aux = raiz;
+       if(aux!=NULL){
+            cout << "***************************************  Institucion Educativa *********************************************" << endl;
+            cout << "************************************          El Macho           ****************************************" << endl;
+            cout<<"***********************************          Recorrer arbol           **************************************"<<endl;
+		  cout<<"\n";
+		  do{
+			  cout<<"Elige el recorrido:"<<endl;
+		      cout<<"1. InOrden"<<endl;
+	          cout<<"2. PreOrden"<<endl;
+	          cout<<"3. PostOrden"<<endl;
+	          cout<<"4. salir"<<endl;
+		      cin>>iu;
+	          switch (iu)
+	           {
+	             case 1: 
+					aux = raiz;
+					inorden(aux);
+					system("pause"); 
+					break;
+	             case 2: 
+					aux = raiz;
+					preorden(aux);
+					system("pause");
+					break;
+	             case 3: 
+	            	aux = raiz;
+					postorden(aux);
+					system("pause");
+	            	break;
+	             case 4: cout<<"Adios"; break;
+	             default:cout<<"Opcion Invalida."; break;
+	            }
+		    }while(iu!=4);
+        }else{
+         cout<<"Vacio..."<<endl;
+         cout<<"No se ha registrado estudiantes"<<endl;
+         system("pause");
+	    }
+	 return 0;
     }
-}
 
-void postorden(Student* aux) {
-    if (aux != NULL) {
-        postorden(aux->iza); 
-        postorden(aux->der); 
-        cout << "ID: " << aux->id << ", Nombre: " << aux->nombre << " " << aux->apellido 
-             << ", Fecha de nacimiento: " << aux->dia << "/" << aux->mes << "/" << aux->anio << endl; 
-    }
-}
-
-void liberarMemoria(Student *aux) {
-    if (aux == NULL) return;
-    liberarMemoria(aux->iza);
-    liberarMemoria(aux->der);
-    free(aux);}
+//Segundo Arbol por Fecha del estudiante.
+struct Student2 {
+    int id2;
+    char nombre2[40];
+    char apellido2[40];
+    int anio2;
+    int mes2;
+    int dia2;
+    Student *iza2, *der2;
+};
+ Student*raiz= NULL,*auxB, *aux2B;
 
 int main() {
     setlocale(LC_ALL, "");
     int opcion = 0;
     do {
         // Menú de opciones <3
-        cout << "***************************************  Institución Educativa *********************************************" << endl;
+        cout << "***************************************  Institucion Educativa *********************************************" << endl;
         cout << "*************************************          El Macho        *******************************************" << endl;
-        cout << "1. Registrar Estudiante" << endl;
-        cout << "2. Recorrido Inorden" << endl;
-        cout << "3. Recorrido Preorden" << endl;
-        cout << "4. Recorrido Postorden" << endl;
+        cout << "1. Registrar Estudiante" << endl; //Completado.
+        cout << "2. Recorrido por ID" << endl;    //Completado.
+        cout << "3. Registro Estudiante Fecha" << endl;
+        cout << "4. Recorrido por Fecha" << endl;
         cout << "5. Eliminar Estudiante" << endl;
-        cout << "6. Salir" << endl;
+        cout << "6. Salir" << endl; 
         cout << "Ingrese la opción deseada: ";
         cin >> opcion; 
         switch (opcion) {
-            case 1: registrarEstudiante(); break;
-            case 2:cout << "Recorrido Inorden:" << endl;
-                   inorden(raiz); ; break;
-            case 3:cout << "Recorrido Preorden:" << endl;
-                   preorden(raiz); ; break;
-            case 4: cout << "Recorrido Postorden:" << endl;
-                   postorden(raiz);; break;
-            case 5: ; break;
-            case 6:cout << "Gracias por usar nuestro sistema <3" << endl; break;
-        default: cout << "Opción no válida. Por favor, elija una opción válida." << endl; break;
+            case 1: RegistrarEstudiante(); break;
+            case 2: recorrer(); ; break;
+            case 3:break;
+            case 4: break;
+            case 5: break;
+            case 6: break;
+            case 7: ; break;
+            case 8:cout << "Gracias por usar nuestro sistema <3" << endl; break;
+            default: cout << "Opcion no válida. Por favor, elija una opcion valida." << endl; break;
         
- } }while (opcion != 6);
+ } }while (opcion != 8);
  return 0;
  }
 
