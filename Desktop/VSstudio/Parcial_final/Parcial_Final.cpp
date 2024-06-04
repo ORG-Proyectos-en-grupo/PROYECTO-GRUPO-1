@@ -1,5 +1,12 @@
 #include <iostream>
 #include <string>
+#include<stdlib.h>
+
+//MALCOLM YESID RIASCOS FIGUEROA
+//KAROL YISNEY CAICEDO MORENO
+
+
+//PROGAMA QUE PERMITE GESTIONAR LOS VIAJES PROGRAMADOS DE LAS EMBARCACIONES DE TRANSPORTE FLUVIAL EN EL PACÍFICO COLOMBIANO.
 
 using namespace std;
 
@@ -144,19 +151,29 @@ string generarId(const string& matricula, int anio, int mes, int dia) {
 
 Viaje crearViaje() {
     Viaje nuevoViaje;
-    cout << "Ingrese la matrícula de la embarcación: ";
+    cout << "Ingrese la matricula de la embarcacion: ";
     cin >> nuevoViaje.matricula;
-    cout << "Ingrese el nombre de la embarcación: ";
+    cout << "Ingrese el nombre de la embarcacion: ";
     cin.ignore();
     getline(cin, nuevoViaje.nombreEmbarcacion);
     cout << "Ingrese el destino del viaje: ";
     getline(cin, nuevoViaje.destino);
     cout << "Ingrese el precio del viaje: ";
     cin >> nuevoViaje.precio;
-    cout << "Ingrese la fecha del viaje (dia mes año): ";
-    cin >> nuevoViaje.dia >> nuevoViaje.mes >> nuevoViaje.anio;
-    cout << "Ingrese la capacidad de la embarcación: ";
+    cout << "Ingrese la fecha del viaje (dia mes anio) ";
+    system("pause");
+    cout<<"\n";
+    cout<<"dia: ";
+    cin>>nuevoViaje.dia;
+    cout<<"mes: ";
+    cin>> nuevoViaje.mes;
+    cout<<"anio: ";
+    cin>>nuevoViaje.anio;
+    cout<<"\n";
+      
+    cout << "Ingrese la capacidad de la embarcacion: ";
     cin >> nuevoViaje.capacidad;
+    cout<<"\n";
     nuevoViaje.id = generarId(nuevoViaje.matricula, nuevoViaje.anio, nuevoViaje.mes, nuevoViaje.dia);
     return nuevoViaje;
 }
@@ -198,7 +215,15 @@ NodoAVL* insertarViaje(NodoAVL* nodo, const Viaje& viaje) {
 void recorridoInOrden(NodoAVL* raiz) {
     if (raiz != NULL) {
         recorridoInOrden(raiz->izq);
-        cout << "ID: " << raiz->viaje.id << ", Embarcación: " << raiz->viaje.nombreEmbarcacion << ", Destino: " << raiz->viaje.destino << endl;
+        cout<< "ID: " << raiz->viaje.id<<endl;
+	    cout<< "Embarcacion: " << raiz->viaje.nombreEmbarcacion<<endl; 
+		cout<< "Destino: " << raiz->viaje.destino<<endl;
+		cout<< "Precio: "<< raiz->viaje.precio<<endl;
+		cout<< "Fecha: "<<raiz->viaje.dia<<"/"<<raiz->viaje.mes<<"/"<<raiz->viaje.anio<<endl;
+		cout<< "capacidad de la embarcacion: "<<raiz->viaje.capacidad;
+		cout<<"\n";
+		cout<<"----------------------------------------------------------"<<endl;
+		cout<<"\n";
         recorridoInOrden(raiz->der);
     }
 }
@@ -283,7 +308,7 @@ int registrarPasajero(NodoAVL* raiz, const string& id, const Pasajero& pasajero)
             viaje->viaje.pasajeros.encolar(pasajero);
             return 0; // Éxito
         } else {
-            cout << "El viaje ha alcanzado su capacidad máxima." << endl;
+            cout << "El viaje ha alcanzado su capacidad maxima." << endl;
             return -1; // Capacidad máxima alcanzada
         }
     } else {
@@ -297,7 +322,9 @@ void listarPasajeros(NodoAVL* raiz, const string& id) {
     if (viaje != NULL) {
         NodoPasajero* actual = viaje->viaje.pasajeros.frente;
         while (actual != NULL) {
-            cout << "Nombre: " << actual->pasajero.nombre << ", ID: " << actual->pasajero.id << endl;
+            cout<< "Nombre: " << actual->pasajero.nombre <<endl;
+			cout<< "ID: " << actual->pasajero.id << endl;
+			cout<<"\n";
             actual = actual->siguiente;
         }
     } else {
@@ -316,8 +343,10 @@ int main() {
         cout << "5. Registrar un pasajero en un viaje." << endl;
         cout << "6. Listar todos los pasajeros de un viaje." << endl;
         cout << "7. Salir." << endl;
-        cout << "Seleccione una opción: ";
+        cout<<"\n";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
+        cout<<"\n";
 
         switch (opcion) {
             case 1: {
@@ -331,8 +360,13 @@ int main() {
                 cin >> id;
                 NodoAVL* viaje = buscarViaje(raiz, id);
                 if (viaje != NULL) {
-                    cout << "ID: " << viaje->viaje.id << ", Embarcación: " << viaje->viaje.nombreEmbarcacion
-                         << ", Destino: " << viaje->viaje.destino << ", Precio: " << viaje->viaje.precio << endl;
+                    cout << "ID: " << viaje->viaje.id<<endl;;
+					cout<< "Embarcacion: " << viaje->viaje.nombreEmbarcacion<<endl;
+                    cout<< "Destino: " << viaje->viaje.destino<<endl;
+				    cout<< "Precio: " << viaje->viaje.precio<<endl;
+					cout<< "Fecha: "<<raiz->viaje.dia<<"/"<<raiz->viaje.mes<<"/"<<raiz->viaje.anio<<endl;
+					cout<< "capacidad de la embarcacion: "<<raiz->viaje.capacidad<<endl;
+					cout<<"\n";
                 } else {
                     cout << "Viaje no encontrado." << endl;
                 }
@@ -353,15 +387,17 @@ int main() {
                 string id;
                 cout << "Ingrese el identificador del viaje: ";
                 cin >> id;
+                cout<<"\n";
                 Pasajero pasajero;
                 cout << "Ingrese el nombre del pasajero: ";
                 cin.ignore();
                 getline(cin, pasajero.nombre);
                 cout << "Ingrese el ID del pasajero: ";
                 cin >> pasajero.id;
+                cout<<"\n";
                 int result = registrarPasajero(raiz, id, pasajero);
                 if (result == 0) {
-                    cout << "Pasajero registrado con éxito." << endl;
+                    cout << "Pasajero registrado con exito." << endl;
                 }
                 break;
             }
@@ -369,6 +405,7 @@ int main() {
                 string id;
                 cout << "Ingrese el identificador del viaje: ";
                 cin >> id;
+                cout<<"\n";
                 listarPasajeros(raiz, id);
                 break;
             }
@@ -377,7 +414,7 @@ int main() {
                 break;
             }
             default: {
-                cout << "Opción no válida. Intente de nuevo." << endl;
+                cout << "Opcion no valida. Intente de nuevo." << endl;
                 break;
             }
         }
