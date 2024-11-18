@@ -49,11 +49,7 @@ const modalType = document.getElementById('modalType');
 const modalDescription = document.getElementById('modalDescription');
 const closeModalPokemon = document.getElementById('closeModalPokemon');
 
-<<<<<<< HEAD
 displayPokemons(pokemons); // Mostrar los pokemons al iniciar la página
-=======
-displayPokemons(pokemons); // Mostrar las pokemons al iniciar la página
->>>>>>> Malcom
 
 function displayPokemons(pokemons) {
     pokemonList.innerHTML = '';
@@ -61,12 +57,8 @@ function displayPokemons(pokemons) {
     pokemons.forEach((pokemon, index) => {
         const pokemonCard = document.createElement('div');
         pokemonCard.classList.add('pokemon-card');
-<<<<<<< HEAD
         pokemonList.appendChild(pokemonCard);
         pokemonCard.setAttribute('data-name', pokemon.name);
-
-=======
->>>>>>> Malcom
 
         pokemonCard.innerHTML = `
             <p>${pokemon.id}</p>
@@ -78,12 +70,6 @@ function displayPokemons(pokemons) {
             console.error(`El pokemon ${pokemon.name} no tiene descripción.`);
         }
         pokemonCard.addEventListener('click', () => showModal(pokemon));
-        pokemonList.appendChild(pokemonCard);
-<<<<<<< HEAD
-pokemonList.appendChild(pokemonCard);
-    
-=======
->>>>>>> Malcom
     });    
 }
 
@@ -100,7 +86,6 @@ function showModal(pokemon) {
         modalPokemon.classList.add("water-mode");
     } else if (pokemon.type === "Bug"){
         modalPokemon.classList.add("bug-mode");
-<<<<<<< HEAD
     } else if (pokemon.type === "Bug/Flying"){
         modalPokemon.classList.add("bug_flying-mode");
     } else if (pokemon.type === "Bug/Poison"){
@@ -115,10 +100,6 @@ function showModal(pokemon) {
         modalPokemon.classList.add("poison_ground-mode");
     } else if (pokemon.type === "Electric"){
         modalPokemon.classList.add("electric-mode");
-=======
-    } else if (pokemon.type === "Poison"){
-        modalPokemon.classList.add("poison-mode");
->>>>>>> Malcom
     } else if (pokemon.type === "Ground"){
         modalPokemon.classList.add("ground-mode");
     } else if (pokemon.type === "Fairy"){
@@ -135,12 +116,8 @@ function showModal(pokemon) {
 
 closeModalPokemon.addEventListener('click', () => {
     modalPokemon.classList.add("hidden");
-<<<<<<< HEAD
     modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "bug_flying-mode", "poison-mode", "bug_poison-mode", "normal-mode",
         "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode");
-=======
-    modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "poison-mode", "ground-mode", "fairy-mode");
->>>>>>> Malcom
 });
 
 sortPokemons.addEventListener('change', (e) => {
@@ -202,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     displayPokemons(pokemons);
 });
 
-<<<<<<< HEAD
 document.getElementById('nameFilter').addEventListener('input', function (e) {
     const searchValue = e.target.value.toLowerCase(); // lo que escribe el pibe en el buscador
     const pokemonCard = document.querySelectorAll('.pokemon-card');
@@ -230,10 +206,7 @@ window.addEventListener("click", (event) => {
         dropdown.classList.add("hidden");
     }
 });
-
-=======
 document.getElementById("aboutUsButton").addEventListener("click", function() {
     const aboutUsSection = document.getElementById("aboutUs");
     aboutUsSection.scrollIntoView({ behavior: "smooth" });
 });
->>>>>>> Malcom
