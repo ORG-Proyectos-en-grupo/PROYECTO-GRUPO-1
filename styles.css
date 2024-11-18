@@ -128,7 +128,6 @@ input {
     z-index: 9999;
 }
 .modalPokemon.grass-mode{
-<<<<<<< HEAD
     background-color: rgba(144, 247, 100, 0.967);
 }
 .modalPokemon.fire-mode{
@@ -166,27 +165,6 @@ input {
 }
 .modalPokemon.fairy-mode{
     background-color: rgb(247, 165, 247);
-=======
-    background-color: rgba(83, 255, 9, 0.967);
-}
-.modalPokemon.fire-mode{
-    background-color: rgb(255, 52, 52);
-}
-.modalPokemon.water-mode{
-    background-color: rgba(108, 164, 255, 0.979);
-}
-.modalPokemon.bug-mode{
-    background-color: rgb(87, 154, 87);
-}
-.modalPokemon.poison-mode{
-    background-color: rgb(229, 6, 229);
-}
-.modalPokemon.ground-mode{
-    background-color: rgb(231, 178, 33);
-}
-.modalPokemon.fairy-mode{
-    background-color: rgb(255, 158, 255);
->>>>>>> Malcom
 }
 
 .modalPokemon-content {
@@ -272,7 +250,6 @@ button.other-mode {
     box-shadow: 0 0 5px rgba(197, 36, 36, 0.1);
     color: white;
 }
-<<<<<<< HEAD
 #perfil {
     position: absolute;
     height: 50px;
@@ -377,8 +354,6 @@ footer .text-center a {
 footer .text-center a:hover {
     text-decoration: underline;
 }
-=======
-
 /* Estilo del botón */
 #aboutUsButton {
     display: flex;
@@ -404,5 +379,3 @@ footer .text-center a:hover {
     height: 24px;
     margin-right: 10px; /* Espacio entre el ícono y el texto */
 }
-
->>>>>>> Malcom
