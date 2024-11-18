@@ -57,6 +57,9 @@ function displayPokemons(pokemons) {
     pokemons.forEach((pokemon, index) => {
         const pokemonCard = document.createElement('div');
         pokemonCard.classList.add('pokemon-card');
+        pokemonList.appendChild(pokemonCard);
+        pokemonCard.setAttribute('data-name', pokemon.name);
+
 
         pokemonCard.innerHTML = `
             <p>${pokemon.id}</p>
@@ -69,6 +72,8 @@ function displayPokemons(pokemons) {
         }
         pokemonCard.addEventListener('click', () => showModal(pokemon));
         pokemonList.appendChild(pokemonCard);
+pokemonList.appendChild(pokemonCard);
+    
     });    
 }
 
@@ -177,6 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
     displayPokemons(pokemons_store); // Mostrar las películas guardadas
     displayPokemons(pokemons);
 });
+
+document.getElementById('nameFilter').addEventListener('input', function (e) {
+    const searchValue = e.target.value.toLowerCase(); // lo que escribe el pibe en el buscador
+    const pokemonCard = document.querySelectorAll('.pokemon-card');
+    
+    pokemonCard.forEach(card => {
+        const pokemonName = card.getAttribute('data-name').toLowerCase(); // nombre del pokemon
+        if (pokemonName.includes(searchValue)) {
+            card.style.display = ""; // Muestra la tarjeta
+        } else {
+            card.style.display = 'none'; // se oculta la targeta
+        }
+
+    })
+})
 document.getElementById("perfil").addEventListener("click", (event) => {
     event.stopPropagation(); // Evita que el clic en el perfil cierre el menú
     const dropdown = document.getElementById("profileDropdown");
@@ -190,3 +210,4 @@ window.addEventListener("click", (event) => {
         dropdown.classList.add("hidden");
     }
 });
+
