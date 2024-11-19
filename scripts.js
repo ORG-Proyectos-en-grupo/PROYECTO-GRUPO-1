@@ -88,8 +88,20 @@ function showModal(pokemon) {
         modalPokemon.classList.add("water-mode");
     } else if (pokemon.type === "Bug"){
         modalPokemon.classList.add("bug-mode");
+    }  else if (pokemon.type === "Bug/Flying"){
+        modalPokemon.classList.add("bug_flying-mode");
+    } else if (pokemon.type === "Bug/Poison"){
+        modalPokemon.classList.add("bug_poison-mode");
+    } else if (pokemon.type === "Normal"){
+        modalPokemon.classList.add("normal-mode");
+    } else if (pokemon.type === "Normal/Flying"){
+        modalPokemon.classList.add("normal_flying-mode");
     } else if (pokemon.type === "Poison"){
         modalPokemon.classList.add("poison-mode");
+    } else if (pokemon.type === "Poison/Ground"){
+        modalPokemon.classList.add("poison_ground-mode");
+    } else if (pokemon.type === "Electric"){
+        modalPokemon.classList.add("electric-mode");
     } else if (pokemon.type === "Ground"){
         modalPokemon.classList.add("ground-mode");
     } else if (pokemon.type === "Fairy"){
@@ -106,7 +118,8 @@ function showModal(pokemon) {
 
 closeModalPokemon.addEventListener('click', () => {
     modalPokemon.classList.add("hidden");
-    modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "poison-mode", "ground-mode", "fairy-mode");
+    modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "bug_flying-mode", "poison-mode", "bug_poison-mode", "normal-mode",
+        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode");
 });
 
 sortPokemons.addEventListener('change', (e) => {
