@@ -91,6 +91,12 @@ input {
     top: 10px;
     cursor: pointer;
 }
+#sesion_iniciada{
+    position: absolute;
+    right: -1px;
+    top: 10px;
+
+}
 
 .pokemon-card {
     width: 200px;
