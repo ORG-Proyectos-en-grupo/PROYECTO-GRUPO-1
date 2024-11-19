@@ -184,3 +184,14 @@ document.getElementById('nameFilter').addEventListener('input', function (e) {
 
     })
 })
+
+const btnNosotros = document.getElementById('btnNosotros');
+const desarrolladores = document.getElementById('desarrolladores');
+
+btnNosotros.addEventListener('click', () => {
+    if (desarrolladores.style.display === 'none' || desarrolladores.style.display === '') {
+        desarrolladores.style.display = 'block'; // Mostrar la sección
+    } else {
+        desarrolladores.style.display = 'none'; // Ocultar la sección
+    }
+});
