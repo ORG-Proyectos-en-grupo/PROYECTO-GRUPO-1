@@ -80,9 +80,6 @@ function displayPokemons(pokemons) {
 pokemonList.appendChild(pokemonCard);
     
 pokemonList.appendChild(pokemonCard);
-    
-=======
-
     });    
 }
 
