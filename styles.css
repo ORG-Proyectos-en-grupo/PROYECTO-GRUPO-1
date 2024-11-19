@@ -49,6 +49,33 @@ nav {
     padding: 20px;
     background-color: rgba(44, 44, 44, 0.968);
 }
+
+.barra-nosotros button {
+    background-color: #f81e1e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    
+
+}
+
+#desarrolladores {
+
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#desarrolladores p {
+
+    margin: px 0;
+}
+
 aside {
     position: relative;
     background-color: rgb(255, 255, 255);

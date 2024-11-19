@@ -59,8 +59,6 @@ function displayPokemons(pokemons) {
         pokemonCard.classList.add('pokemon-card');
         pokemonList.appendChild(pokemonCard);
         pokemonCard.setAttribute('data-name', pokemon.name);
-
-
         pokemonCard.innerHTML = `
             <p>${pokemon.id}</p>
             <img src="${pokemon.image}" alt="${pokemon.name}">
@@ -71,9 +69,9 @@ function displayPokemons(pokemons) {
             console.error(`El pokemon ${pokemon.name} no tiene descripción.`);
         }
         pokemonCard.addEventListener('click', () => showModal(pokemon));
+
         pokemonList.appendChild(pokemonCard);
-pokemonList.appendChild(pokemonCard);
-    
+
     });    
 }
 
@@ -176,3 +174,46 @@ document.getElementById('nameFilter').addEventListener('input', function (e) {
 
     })
 })
+document.getElementById('nameFilter').addEventListener('input', function (e) {
+    const searchValue = e.target.value.toLowerCase(); // lo que escribe el pibe en el buscador
+    const pokemonCard = document.querySelectorAll('.pokemon-card');
+    
+    pokemonCard.forEach(card => {
+        const pokemonName = card.getAttribute('data-name').toLowerCase(); // nombre del pokemon
+        if (pokemonName.includes(searchValue)) {
+            card.style.display = ""; // Muestra la tarjeta
+        } else {
+            card.style.display = 'none'; // se oculta la targeta
+        }
+
+    })
+})
+
+const btnNosotros = document.getElementById('btnNosotros');
+const desarrolladores = document.getElementById('desarrolladores');
+
+btnNosotros.addEventListener('click', () => {
+    if (desarrolladores.style.display === 'none' || desarrolladores.style.display === '') {
+        desarrolladores.style.display = 'block'; // Mostrar la sección
+    } else {
+        desarrolladores.style.display = 'none'; // Ocultar la sección
+    }
+});
+
+document.getElementById("perfil").addEventListener("click", (event) => {
+    event.stopPropagation(); // Evita que el clic en el perfil cierre el menú
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.classList.toggle("hidden"); // Alterna la visibilidad
+});
+
+// Cierra el menú desplegable al hacer clic fuera de él
+window.addEventListener("click", (event) => {
+    const dropdown = document.getElementById("profileDropdown");
+    if (!event.target.closest("#perfil") && !dropdown.contains(event.target)) {
+        dropdown.classList.add("hidden");
+    }
+});
+document.getElementById("aboutUsButton").addEventListener("click", function() {
+    const aboutUsSection = document.getElementById("aboutUs");
+    aboutUsSection.scrollIntoView({ behavior: "smooth" });
+});
