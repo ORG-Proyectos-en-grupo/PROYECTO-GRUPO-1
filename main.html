@@ -11,10 +11,11 @@
     <header>
         <img src="https://pokemongolive.com/img/posts/summerofgo2019.jpg" alt="">
         <h1>PioPokedex</h1>
-        <P>Atrapalos a todos</P>
+        <p>Atrápalos a todos</p>
     </header>
 
     <nav>
+
         <div class="barra-nosotros">
             <button id="btnNosotros">Nosotros</button>
             <a href="info.html">
@@ -27,6 +28,14 @@
         </div>
     </nav>
 
+    
+
+
+        <button id="aboutUsButton">
+            <img src="https://img.icons8.com/color/48/000000/pokeball--v1.png" alt="Pokébola" class="pokeball-icon">
+            ¿Quiénes somos?
+        </button>
+    </nav>
     
 
     <aside>
@@ -43,7 +52,13 @@
             </select>
             <button id="themeToggle">Cambiar a modo claro</button>
         </div>
-        <img id = "perfil" src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" alt="">
+        <img id = "perfil" src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" alt="Perfil">
+        <div id="profileDropdown" class="dropdown hidden">
+            <ul>
+                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
         <div id="pokemonList"></div>
         <!-- Modal para mostrar detalles de la película -->
         <div id="modalPokemon" class="modalPokemon hidden">
@@ -58,6 +73,35 @@
         </div> 
     </aside>
     <script src="scripts.js"></script>
+
+    <!-- Footer --> 
+    <footer> 
+        <div class="container"> 
+            <div class="col">
+                <h5 class="text-uppercase">Contacto</h5> 
+                <ul class="list-unstyled"> 
+                    <li>Persona 1: Hermis@politecnico.pio</li> 
+                    <li>Persona 2: Ildemar@politecnico.pio</li> 
+                    <li>Persona 3: Sarly@politecnico.pio</li> 
+                    <li>Persona 4: Malcom@politecnico.pio</li> 
+                    <li>Persona 5: Michael@politecnico.pio</li> 
+                </ul> 
+            </div> 
+            <div class="col"> 
+                <h5 class="text-uppercase">Información Adicional</h5> 
+                <p>Teléfonos: (123) 456-7890, (123) 456-7891, (123) 456-7892</p> 
+                <p>Dirección: Calle La Union 123, Buenaventura, Colombia</p> 
+            </div> 
+        </div>        
+        <div class="text-center"> 
+            © 2024 Derechos Reservados: 
+            <a href="#">PIOGAME</a> 
+        </div> 
+    <div id="aboutUs">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una plataforma dedicada a los amantes de Pokémon, donde puedes encontrar información, explorar y coleccionar tus Pokémon favoritos.</p>
+    </div>
+    </footer>
 
 </body>
 

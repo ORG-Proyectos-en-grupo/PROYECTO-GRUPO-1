@@ -49,7 +49,7 @@ const modalType = document.getElementById('modalType');
 const modalDescription = document.getElementById('modalDescription');
 const closeModalPokemon = document.getElementById('closeModalPokemon');
 
-displayPokemons(pokemons); // Mostrar las pokemons al iniciar la página
+displayPokemons(pokemons); // Mostrar los pokemons al iniciar la página
 
 function displayPokemons(pokemons) {
     pokemonList.innerHTML = '';
@@ -64,6 +64,7 @@ function displayPokemons(pokemons) {
         pokemonCard.setAttribute('data-name', pokemon.name);
 
 
+
         pokemonCard.innerHTML = `
             <p>${pokemon.id}</p>
             <img src="${pokemon.image}" alt="${pokemon.name}">
@@ -74,11 +75,14 @@ function displayPokemons(pokemons) {
             console.error(`El pokemon ${pokemon.name} no tiene descripción.`);
         }
         pokemonCard.addEventListener('click', () => showModal(pokemon));
+
         pokemonList.appendChild(pokemonCard);
 pokemonList.appendChild(pokemonCard);
     
 pokemonList.appendChild(pokemonCard);
     
+=======
+
     });    
 }
 
@@ -95,8 +99,20 @@ function showModal(pokemon) {
         modalPokemon.classList.add("water-mode");
     } else if (pokemon.type === "Bug"){
         modalPokemon.classList.add("bug-mode");
+    } else if (pokemon.type === "Bug/Flying"){
+        modalPokemon.classList.add("bug_flying-mode");
+    } else if (pokemon.type === "Bug/Poison"){
+        modalPokemon.classList.add("bug_poison-mode");
+    } else if (pokemon.type === "Normal"){
+        modalPokemon.classList.add("normal-mode");
+    } else if (pokemon.type === "Normal/Flying"){
+        modalPokemon.classList.add("normal_flying-mode");
     } else if (pokemon.type === "Poison"){
         modalPokemon.classList.add("poison-mode");
+    } else if (pokemon.type === "Poison/Ground"){
+        modalPokemon.classList.add("poison_ground-mode");
+    } else if (pokemon.type === "Electric"){
+        modalPokemon.classList.add("electric-mode");
     } else if (pokemon.type === "Ground"){
         modalPokemon.classList.add("ground-mode");
     } else if (pokemon.type === "Fairy"){
@@ -113,7 +129,8 @@ function showModal(pokemon) {
 
 closeModalPokemon.addEventListener('click', () => {
     modalPokemon.classList.add("hidden");
-    modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "poison-mode", "ground-mode", "fairy-mode");
+    modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "bug_flying-mode", "poison-mode", "bug_poison-mode", "normal-mode",
+        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode");
 });
 
 sortPokemons.addEventListener('change', (e) => {
@@ -190,6 +207,7 @@ document.getElementById('nameFilter').addEventListener('input', function (e) {
     })
 })
 
+
 document.getElementById('nameFilter').addEventListener('input', function (e) {
     const searchValue = e.target.value.toLowerCase(); // lo que escribe el pibe en el buscador
     const pokemonCard = document.querySelectorAll('.pokemon-card');
@@ -215,3 +233,22 @@ btnNosotros.addEventListener('click', () => {
         desarrolladores.style.display = 'none'; // Ocultar la sección
     }
 });
+
+document.getElementById("perfil").addEventListener("click", (event) => {
+    event.stopPropagation(); // Evita que el clic en el perfil cierre el menú
+    const dropdown = document.getElementById("profileDropdown");
+    dropdown.classList.toggle("hidden"); // Alterna la visibilidad
+});
+
+// Cierra el menú desplegable al hacer clic fuera de él
+window.addEventListener("click", (event) => {
+    const dropdown = document.getElementById("profileDropdown");
+    if (!event.target.closest("#perfil") && !dropdown.contains(event.target)) {
+        dropdown.classList.add("hidden");
+    }
+});
+document.getElementById("aboutUsButton").addEventListener("click", function() {
+    const aboutUsSection = document.getElementById("aboutUs");
+    aboutUsSection.scrollIntoView({ behavior: "smooth" });
+});
+
