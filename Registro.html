@@ -1,0 +1,56 @@
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Mi Perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form id="registroForm" method="post" data-parsley-validate><!-- Inicio de Formulario-->
+            <div class="mb-1">
+              <label for="nombres" class="col-form-label">Nombres:</label>
+              <input type="text" class="form-control" id="nombres"  required 
+                    data-parsley-pattern="^[a-zA-Z\s]+$" 
+                    data-parsley-error-message="Solo se permiten letras y espacios" 
+                    data-parsley-trigger="keyup">
+            </div>
+            <div class="mb-1">
+              <label for="apellidos" class="col-form-label">Apellidos:</label>
+              <input type="text" class="form-control" id="apellidos" required 
+                    data-parsley-pattern="^[a-zA-Z\s]+$" 
+                    data-parsley-error-message="Solo se permiten letras y espacios" 
+                    data-parsley-trigger="keyup">
+            </div>
+            
+            <div class="mb-1">
+              <label for="correo" class="col-form-label">Correo:</label>
+              <input type="email" class="form-control" id="correo" required 
+                    data-parsley-type="email" 
+                    data-parsley-error-message="Debe ser un correo válido" 
+                    data-parsley-trigger="keyup">
+            </div>
+            <div class="row mb-1">
+                <div class="col-6">
+                  <label for="clave" class="col-form-label">Contraseña:</label>
+                  <input type="password" class="form-control" id="clave" required 
+                        data-parsley-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{3,}).{8,}$" 
+                        data-parsley-error-message="Debe contener una longitud de 8: al menos 1 mayúscula, 1 minúscula, y 3 números"
+                        data-parsley-trigger="keyup">
+                </div>
+                <div class="col-6">
+                  <label for="claveC" class="col-form-label">Confirmar Contraseña:</label>
+                  <input type="password" class="form-control" id="claveC" required 
+                        data-parsley-equalto="#clave" 
+                        data-parsley-error-message="Las contraseñas no coinciden"
+                        data-parsley-trigger="keyup">
+                </div>
+            </div>
+        </form><!-- Fin de Formulario-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" form="registroForm">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

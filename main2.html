@@ -13,12 +13,12 @@
 
     <header>
         <div class="nav-item dropdown">
+            <p id="sesion_iniciada">bienvenido</p>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img id="perfil" src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" class="overlay-image" alt="">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                
-                
+
                 <li><a class="dropdown-item text-dark" href="#" onclick="fmenu('Registro')">Registrarse</a></li>
                 <li><a class="dropdown-item text-dark" href="#" onclick="fmenu('inicio_sesion')">Iniciar Sesión</a></li>
             </ul>
@@ -27,33 +27,8 @@
         <h1>PioPokedex</h1>
         <P>Atrapalos a todos</P>
     </header>
-    <nav>
-        <a href="about.html" class="pokeball-link">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pokébola" class="pokeball-image">
-            Inicio
-        </a>
 
-        <div class="barra-nosotros">
-            <button id="btnNosotros">Nosotros</button>
-            <a href="info.html">
-                <button id="btnInfo">info</button>
-            </a>
-        </div>
-        <div id="desarrolladores" style="display: none;">
-            <p>Desarrollador 1: Hermis Julian</p>
-            <p>Ciudad: Tulua</p>
-            <p>Edad: 21</p>
-            <p>Correo: Hermis@politecnico.pio</p>
-            <p>estudiante de programacion</p>
-            <p>estudiante de electronica</p>
-            
-            <p>Desarrollador 2: Nombre</p>
-        </div>
-    </nav>
-    <button id="aboutUsButton">
-        <img src="https://img.icons8.com/color/48/000000/pokeball--v1.png" alt="Pokébola" class="pokeball-icon">
-        ¿Quiénes somos?
-    </button>
+    <nav class="barra"></nav>
 
     <aside>
         <div id="filters">
@@ -83,34 +58,6 @@
             </div>
         </div> 
     </aside>
-    <!-- Footer --> 
-    <footer> 
-        <div class="container"> 
-            <div class="col">
-                <h5 class="text-uppercase">Contacto</h5> 
-                <ul class="list-unstyled"> 
-                    <li>Persona 1: Hermis@politecnico.pio</li> 
-                    <li>Persona 2: Ildemar@politecnico.pio</li> 
-                    <li>Persona 3: Sarly@politecnico.pio</li> 
-                    <li>Persona 4: Malcom@politecnico.pio</li> 
-                    <li>Persona 5: Michael@politecnico.pio</li> 
-                </ul> 
-            </div> 
-            <div class="col"> 
-                <h5 class="text-uppercase">Información Adicional</h5> 
-                <p>Teléfonos: (123) 456-7890, (123) 456-7891, (123) 456-7892</p> 
-                <p>Dirección: Calle La Union 123, Buenaventura, Colombia</p> 
-            </div> 
-        </div>        
-        <div class="text-center"> 
-            © 2024 Derechos Reservados: 
-            <a href="#">PIOGAME</a> 
-        </div> 
-    <div id="aboutUs">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos una plataforma dedicada a los amantes de Pokémon, donde puedes encontrar información, explorar y coleccionar tus Pokémon favoritos.</p>
-    </div>
-    </footer>
     <script src="scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/parsley.min.js"></script>

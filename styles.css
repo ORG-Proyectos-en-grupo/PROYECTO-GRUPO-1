@@ -24,7 +24,7 @@ header img{
 }
 header h1{
     display: flex;
-    padding: 10px;
+    padding:10px;
     margin: 0px;
     justify-content: center;
     font-size: 70px;
@@ -46,21 +46,46 @@ header p {
     z-index: 999;
 }
 nav {
+    position: relative;
+    top: 60px;
     padding: 20px;
     background-color: rgba(44, 44, 44, 0.968);
 }
+
+.barra-nosotros button {
+    background-color: #f81e1e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    
+
+}
+
+#desarrolladores {
+
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#desarrolladores p {
+
+    margin: px 0;
+}
+
 aside {
     background-color: rgb(255, 255, 255);
-    margin: 30px 20px;
+    margin: 85px 20px 40px 20px;
     padding: 20px;
     border-radius: 1%;
 }
 
-form {
-    margin-bottom: 10px;
-    position: absolute;
-    right: 10px;
-}
+
 
 label {
     margin-right: 10px;
@@ -83,7 +108,7 @@ input {
 #nameFilter {
     font-size: 17px;
     height: 17px;
-    width: 900px;
+    width: auto;
 }
 #perfil {
     position: absolute;
@@ -92,6 +117,12 @@ input {
     right: 40px;
     top: 10px;
     cursor: pointer;
+}
+#sesion_iniciada{
+    position: absolute;
+    right: -1px;
+    top: 10px;
+
 }
 
 .pokemon-card {
@@ -137,9 +168,29 @@ input {
     background-color: rgba(108, 164, 255, 0.979);
 }
 .modalPokemon.bug-mode{
+    background-color: rgb(92, 159, 112);
+}
+.modalPokemon.bug_flying-mode{
+    background-color: rgb(136, 191, 175);
+}
+.modalPokemon.bug_poison-mode{
+    background-color: rgb(157, 98, 155);
+}
+.modalPokemon.normal-mode{
+    background-color: rgb(117, 103, 69);
+}
+.modalPokemon.normal_flying-mode{
+    background-color: rgb(143, 128, 91);
     background-color: rgb(87, 154, 87);
 }
 .modalPokemon.poison-mode{
+    background-color: rgb(156, 35, 156);
+}
+.modalPokemon.poison_ground-mode{
+    background-color: rgb(129, 94, 129);
+}
+.modalPokemon.electric-mode{
+    background-color: rgb(248, 248, 59);
     background-color: rgb(229, 6, 229);
 }
 .modalPokemon.ground-mode{
@@ -207,12 +258,55 @@ input {
 .hidden {
     display: none;
 }
+/* Estilos del menu y el div y barra*/
+
+.nav-item.dropdown{
+    
+    right: 5%;
+    position: absolute;
+    
+    
+}
+.nav-item .dropdown-menu {
+    position: absolute !important; /* Forzar la posición */
+    inset: 40px 0px auto auto !important; /* Configurar las coordenadas */
+    margin: 0px !important; /* Remover márgenes adicionales */
+    transform: translate(0px, 26px) !important; /* Aplicar el desplazamiento */
+}
+element.style {
+    position: absolute;
+    inset: 110px 0px auto auto;
+    margin: 0px;
+    transform: translate(0px, 26px);
+}
+.dropdown-menu{
+    inset: 110px 0px auto auto;
+    position: absolute;
+    top: 10%;
+    --bs-dropdown-link-active-bg: #fcfbfb;
+
+    background-color: #e9e8e8;
+}
+.overlay-image {
+
+    z-index: 2; /* Capa superior */
+}
+.dropdown-toggle::after {
+    visibility: hidden;
+    
+}
+
+.barra{
+    background-color: #2beccc;
+    
+}
 
 
 /* Estilos del modo oscuro */
 body.other-mode {
-    background-color: rgb(219, 219, 219);
-    color: #333;
+    background-color: rgb(51, 50, 50);
+    color: #1a1919;
+    
 }
 header.other-mode {
     background-color: #333;
@@ -232,13 +326,96 @@ button.other-mode {
     box-shadow: 0 0 5px rgba(197, 36, 36, 0.1);
     color: white;
 }
-
+.dropdown {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown li {
+    padding: 10px;
+}
+.dropdown li a {
+    color: black;
+    text-decoration: none;
+}
+.dropdown li a:hover {
+    background-color: #eee;
+}
+.hidden {
+    display: none;
+}
+#profileDropdown {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(185, 173, 5);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo translúcido */
+    padding: 3rem;
+}
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Centra las columnas horizontalmente */
+    align-items: flex-start; /* Alinea las columnas al inicio verticalmente */
+    gap: 15rem; /* Espacio entre columnas */
+    color: #000000; /* Color del texto */
+}
+footer h5 {
+    font-size: 1.5rem;
+    color: #000; /* Color del título */
+    margin-bottom: 1rem;
+    text-align: center; /* Centra los títulos */
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+footer ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+footer .text-center {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo translúcido para la parte inferior */
+    font-size: 0.9rem;
+    text-align: center;
+}
+footer .text-center a {
+    color: #333; /* Enlace oscuro */
+    font-weight: bold;
+    text-decoration: none;
+}
+footer .text-center a:hover {
+    text-decoration: underline;
+}
 /* Estilo del botón */
 #aboutUsButton {
     display: flex;
     align-items: center;
     background-color: #ffcc01; /* Color de fondo */
     border: none;
+    position: relative;
+    top: 70px;
+    left: 25px;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -247,11 +424,9 @@ button.other-mode {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 #aboutUsButton:hover {
     background-color: #e6b800; /* Color al pasar el mouse */
 }
-
 /* Estilo del ícono de Pokébola */
 .pokeball-icon {
     width: 24px;
