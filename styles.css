@@ -114,7 +114,7 @@ input {
     position: absolute;
     height: 50px;
     width: 50px;
-    right: 40px;
+    right: 0px;
     top: 10px;
     cursor: pointer;
 }
@@ -126,7 +126,7 @@ input {
 }
 
 .pokemon-card {
-    width: 200px;
+    width: 222px;
     height: 300px;
     background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.881) 50%, rgba(179, 179, 179, 0.881) 70%);
     padding: 10px;
@@ -203,7 +203,7 @@ input {
 .modalPokemon-content {
     background-color: rgb(255, 255, 255);
     width: 400px;
-    height: 100px;
+    height: 250px;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -215,16 +215,15 @@ input {
 .modalPokemon-content h3 {
     position: absolute;
     margin: 10px 0px;
-    top: -140%;
+    top: -80%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 20px;
     font-weight: bold;
 }
-
 .modalPokemon-content #modalId {
     position: absolute;
-    top: -135%;
+    top: -58%;
     right: 25%;
     transform: translate(-50%, -50%);
     font-size: 13px;
@@ -232,7 +231,7 @@ input {
 }
 .modalPokemon-content img {
     position: absolute;
-    top: -45%;
+    top: -25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 190px;
@@ -243,6 +242,7 @@ input {
 .modalPokemon-content #modalType {
     color: #000000;
     margin: 20px 0px;
+    padding: 10px;
 }
 
 .close {
@@ -499,3 +499,9 @@ footer .text-center a:hover {
     height: 20px;
     margin-right: 10px; /* Espacio entre la Pokébola y el texto */
 }
+.barraAbout {
+    margin-top: -60px; /* Ajusta el valor según sea necesario */
+    margin-bottom: 80px;
+    color: #ffffff;
+}
+
