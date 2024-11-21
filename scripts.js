@@ -71,6 +71,10 @@ function displayPokemons(pokemons) {
         pokemonCard.addEventListener('click', () => showModal(pokemon));
 
         pokemonList.appendChild(pokemonCard);
+pokemonList.appendChild(pokemonCard);
+    
+pokemonList.appendChild(pokemonCard);
+    
 
     });    
 }
