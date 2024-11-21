@@ -49,7 +49,7 @@ const modalType = document.getElementById('modalType');
 const modalDescription = document.getElementById('modalDescription');
 const closeModalPokemon = document.getElementById('closeModalPokemon');
 
-displayPokemons(pokemons); // Mostrar los pokemons al iniciar la página
+displayPokemons(pokemons); // Mostrar las pokemons al iniciar la página
 
 function displayPokemons(pokemons) {
     pokemonList.innerHTML = '';
@@ -59,12 +59,6 @@ function displayPokemons(pokemons) {
         pokemonCard.classList.add('pokemon-card');
         pokemonList.appendChild(pokemonCard);
         pokemonCard.setAttribute('data-name', pokemon.name);
-
-        pokemonList.appendChild(pokemonCard);
-        pokemonCard.setAttribute('data-name', pokemon.name);
-
-
-
         pokemonCard.innerHTML = `
             <p>${pokemon.id}</p>
             <img src="${pokemon.image}" alt="${pokemon.name}">
@@ -81,7 +75,6 @@ pokemonList.appendChild(pokemonCard);
     
 pokemonList.appendChild(pokemonCard);
     
-=======
 
     });    
 }
@@ -99,7 +92,7 @@ function showModal(pokemon) {
         modalPokemon.classList.add("water-mode");
     } else if (pokemon.type === "Bug"){
         modalPokemon.classList.add("bug-mode");
-    } else if (pokemon.type === "Bug/Flying"){
+    }  else if (pokemon.type === "Bug/Flying"){
         modalPokemon.classList.add("bug_flying-mode");
     } else if (pokemon.type === "Bug/Poison"){
         modalPokemon.classList.add("bug_poison-mode");
@@ -170,14 +163,6 @@ themeToggle.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
-
-
 function savePokemons() {
     localStorage.setItem('pokemon', JSON.stringify(pokemons));
 }
@@ -206,8 +191,6 @@ document.getElementById('nameFilter').addEventListener('input', function (e) {
 
     })
 })
-
-
 document.getElementById('nameFilter').addEventListener('input', function (e) {
     const searchValue = e.target.value.toLowerCase(); // lo que escribe el pibe en el buscador
     const pokemonCard = document.querySelectorAll('.pokemon-card');
@@ -252,3 +235,30 @@ document.getElementById("aboutUsButton").addEventListener("click", function() {
     aboutUsSection.scrollIntoView({ behavior: "smooth" });
 });
 
+
+function mostrarSeccion(seccionId) {
+    const secciones = document.querySelectorAll('main > section');
+    secciones.forEach(seccion => {
+        seccion.classList.remove('visible');
+        seccion.classList.add('hidden');
+    });
+
+    const seccionActiva = document.getElementById(seccionId);
+    if (seccionActiva) {
+        seccionActiva.classList.remove('hidden');
+        seccionActiva.classList.add('visible');
+    }
+}
+
+function mostrarSeccion(seccionId) {
+
+    const secciones = document.querySelectorAll('main > section');
+    secciones.forEach(seccion => {
+        seccion.classList.remove('visible');
+        seccion.classList.add('hidden');
+    });
+
+    const seccionActiva = document.getElementById(seccionId);
+    seccionActiva.classList.remove('hidden');
+    seccionActiva.classList.add('visible');
+}
