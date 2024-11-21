@@ -47,69 +47,18 @@ header p {
 }
 nav {
     position: relative;
-    top: 50px;
-    padding: 30px;
+    top: 70px;
+    padding: 20px;
     background-color: rgba(44, 44, 44, 0.968);
 }
 
 .barra-nosotros button {
     background-color: #f81e1e;
     color: white;
-
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-
-    padding: 0px;
-    text-align: center;
-    
-
-}
-
-.hidden {
-    display: none;
-}
-
-.visibe {
-    display: block;
-}
-
-nav {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #af2f2f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    text-align: start;
-    
-}
-
-nav button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointener;
-    font-size: 1em;
-}
-
-nav button:hover {
-    background-color: #777;
-}
-
-main {
-    padding: 15px;
-    text-align: start;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-
     
 
 }
@@ -134,38 +83,8 @@ aside {
     margin: 85px 20px 40px 20px;
     padding: 20px;
     border-radius: 1%;
-
 }
 
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}
-
-aside header {
-    background-color: #333;
-    color: white;
-    text-align: start;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-}
-
-aside button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    cursor: pointener;
-    font-size: 1em;
-}
-
-aside button:hover {
-    background-color: #777;
-}
 
 
 label {
@@ -206,19 +125,129 @@ input {
 
 }
 
-footer {
 
+.close {
+    color: #ff0000;
+    position: absolute;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+/* Estilos del menu y el div y barra*/
+
+.nav-item.dropdown{
+    
+    right: 5%;
+    position: absolute;
+    
+    
+}
+.nav-item .dropdown-menu {
+    position: absolute !important; /* Forzar la posición */
+    inset: 40px 0px auto auto !important; /* Configurar las coordenadas */
+    margin: 0px !important; /* Remover márgenes adicionales */
+    transform: translate(0px, 26px) !important; /* Aplicar el desplazamiento */
+}
+element.style {
+    position: absolute;
+    inset: 110px 0px auto auto;
+    margin: 0px;
+    transform: translate(0px, 26px);
+}
+.dropdown-menu{
+    inset: 110px 0px auto auto;
+    position: absolute;
+    top: 10%;
+    --bs-dropdown-link-active-bg: #fcfbfb;
+
+    background-color: #e9e8e8;
+}
+.overlay-image {
+
+    z-index: 2; /* Capa superior */
+}
+.dropdown-toggle::after {
+    visibility: hidden;
+    
+}
+
+.barra{
+    background-color: #2beccc;
+    
+}
+
+
+/* Estilos del modo oscuro */
+body.other-mode {
+    background-color: rgb(51, 50, 50);
+    color: #1a1919;
+    
+}
+header.other-mode {
+    background-color: #333;
+}
+nav.other-mode {
+    background-color: rgba(101, 101, 101, 0.881);
+}
+aside.other-mode {
+    background-color: rgba(175, 175, 175, 0.881);
+}
+button.other-mode {
+    background-color: #535353;
+    color: rgb(228, 228, 228);
+}
+.pokemon-card.other-mode {
+    background-color: rgb(129, 129, 129);
+    box-shadow: 0 0 5px rgba(197, 36, 36, 0.1);
+    color: white;
+}
+.dropdown {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown li {
+    padding: 10px;
+}
+.dropdown li a {
+    color: black;
+    text-decoration: none;
+}
+.dropdown li a:hover {
+    background-color: #eee;
+}
+.hidden {
+    display: none;
+}
+#profileDropdown {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(185, 173, 5);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+footer {
     background-color: rgba(0, 0, 0, 0.2); /* Fondo translúcido */
     padding: 3rem;
-
-    background-color: #333;
-    color: white;
-    text-align: start;
-    padding: 0px;
-    position: fixed;
-    bottom: 0;
-    width: 100%
-
 }
 footer .container {
     max-width: 1200px;
@@ -285,68 +314,12 @@ footer .text-center a:hover {
     height: 24px;
     margin-right: 10px; /* Espacio entre el ícono y el texto */
 }
-
-.nav-item .dropdown-menu {
-    position: absolute !important; /* Forzar la posición */
-    inset: 40px 0px auto auto !important; /* Configurar las coordenadas */
-    margin: 0px !important; /* Remover márgenes adicionales */
-    transform: translate(0px, 26px) !important; /* Aplicar el desplazamiento */
-}
-
-.dropdown-menu{
-    inset: 110px 0px auto auto;
-    position: absolute;
-    top: 10%;
-    --bs-dropdown-link-active-bg: #fcfbfb;
-
-    background-color: #e9e8e8;
-}
-
-.overlay-image {
-
-    z-index: 2; /* Capa superior */
-}
-
-.dropdown-toggle::after {
-    visibility: hidden;
-    
-}
-
-.barra{
-    background-color: #2beccc;
-    
-}
-
-#profileDropdown {
-    position: absolute;
-    right: 40px;
-    top: 70px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(185, 173, 5);
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.about-image {
-    flex: 1;
-    max-width: 200px;
-    margin: 0 auto 1rem;
-    border: 3px solid #ffcc00;
-    border-radius: 50%;
-    background-color: #fff;
-}
-
 .about-text {
     flex: 2;
     padding: 1rem;
 }
+
+
 
 .about-text h2 {
     color: #c21807;
@@ -384,4 +357,36 @@ footer .text-center a:hover {
     margin-top: -60px; /* Ajusta el valor según sea necesario */
     margin-bottom: 80px;
     color: #ffffff;
+}
+
+.hidden {
+    display : none;
+}
+
+.visible {
+    display: block;
+}
+
+aside header {
+    background-color: #333;
+    color: white;
+    text-align: start;
+    padding: 10px;
+    
+    bottom: 0;
+    width: 100%;
+}
+
+aside button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+aside button:hover {
+    background-color: #777;
 }
