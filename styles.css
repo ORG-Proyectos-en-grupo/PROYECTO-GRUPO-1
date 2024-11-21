@@ -113,7 +113,7 @@ input {
 #perfil {
     position: absolute;
     height: 50px;
-    width: 50px;
+    width: 55px;
     right: 0px;
     top: 10px;
     cursor: pointer;
@@ -246,7 +246,7 @@ input {
 }
 
 .close {
-    color: #ff0000;
+    color: #f75b5b;
     position: absolute;
     font-size: 30px;
     top: 10px;
