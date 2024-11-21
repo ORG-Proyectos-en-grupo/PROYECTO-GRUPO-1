@@ -1,31 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info - PioPokedex</title>
+    <title>PIOGAME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styleinfo.css">
+    
 </head>
 <body>
+    <main id="cuerpoPag"></main>
+
     <header>
-        <h1>¿Quiénes somos?</h1>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img id="perfil" src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" class="overlay-image" alt="">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                
+                <li><a class="dropdown-item text-dark" href="#" onclick="fmenu('Registro')">Registrarse</a></li>
+                <li><a class="dropdown-item text-dark" href="#" onclick="fmenu('inicio_sesion')">Iniciar Sesión</a></li>
+            </ul>
+        </div>  
+        <img src="https://pokemongolive.com/img/posts/summerofgo2019.jpg" class="background-image"  alt="">
+        <h1>PioPokedex</h1>
+        <P>Atrapalos a todos</P>
+    </header>
+    <nav>
+
+        <div class="barra-nosotros">
+            <a href="about.html" class="pokeball-link">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pokébola" class="pokeball-image">
+                <span style="color: white;">Inicio</span>
+            </a>
+            <button id="btnNosotros">Nosotros</button>
+            <a href="main.html">
+                <button id="btnInfo">PioPokedex</button>
+            </a>
+        </div>
+        <div id="desarrolladores" style="display: none;">
+            <p>Desarrollador 1: Hermis Julian</p>
+            <p>Ciudad: Tulua</p>
+            <p>Edad: 21</p>
+            <p>Correo: Hermis@politecnico.pio</p>
+            <p>estudiante de programacion</p>
+            <p>estudiante de electronica</p>
+            
+            <p>Desarrollador 2: Nombre</p>
+        </div>
+    </nav>
+    <button id="aboutUsButton">
+        <img src="https://img.icons8.com/color/48/000000/pokeball--v1.png" alt="Pokébola" class="pokeball-icon">
+        ¿Quiénes somos?
+    </button>
+
+    <aside>
+
+        <div>
+            <button id="themeToggle">Cambiar a modo claro</button>
+            </div>
+            
+        <header>
+        ¿Quiénes somos?
+        <button onclick="mostrarSeccion('quienes-somos')">¿Quiénes somos?</button>
+        <button onclick="mostrarSeccion('nuestra-historia')">Nuestra Historia</button>
+        <button onclick="mostrarSeccion('el-equipo')">El Equipo</button>
     </header>
 
     <main>
-        <section id="¿Quiénes-somos?">
-            <h2>Nuestra Historia</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum exercitationem adipisci dolores praesentium iste facilis quidem quis consectetur? Soluta eos commodi beatae nostrum nihil ea quasi at laborum quibusdam quas!</p>
+
+            <section id="quienes-somos" class="hidden">
+                <h2>¿Quiénes somos?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque eaque, sed facere sequi ad suscipit cumque. Soluta minima facilis recusandae asperiores. Odio ea facere at ex. Delectus suscipit quos eaque?</p>
+            </section>
+
+            <section id="nuestra-historia" class="hidden">
+                <h2>Nuestra Historia</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quasi ad a sit quae aliquid, placeat error fugiat enim iure, repellat perspiciatis culpa tempora possimus modi sed amet ea accusamus.</p>
+            </section>
+
+            <section id="el-equipo" class="hidden">
+                <h2>El Equipo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta pariatur earum blanditiis qui eaque exercitationem velit, eveniet minima repudiandae laudantium quidem rerum quaerat sapiente, officia iste repellat ut ab!</p>
+            </section>
+        </main>
+
         
-            <h2>Nuestro Propósito</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet nemo deserunt consequuntur cum doloremque facere unde iure esse. Fugit cupiditate autem sit suscipit, deserunt magnam velit rem dolorum distinctio.</p>
+    </aside>
 
-            <h2>El Equipo</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore sit atque corporis adipisci error dignissimos consequatur illum, facere ad dolore, debitis exercitationem quaerat ullam! Quisquam ab esse laudantium praesentium nostrum.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>$copy; 2024 PioPokedex - Todos los derechos reservados.</p>
+    <!-- Footer --> 
+    <footer> 
+        <div class="container"> 
+            <div class="col">
+                <h5 class="text-uppercase">Contacto</h5> 
+                <ul class="list-unstyled"> 
+                    <li>Persona 1: Hermis@politecnico.pio</li> 
+                    <li>Persona 2: Ildemar@politecnico.pio</li> 
+                    <li>Persona 3: Sarly@politecnico.pio</li> 
+                    <li>Persona 4: Malcom@politecnico.pio</li> 
+                    <li>Persona 5: Michael@politecnico.pio</li> 
+                </ul> 
+            </div> 
+            <div class="col"> 
+                <h5 class="text-uppercase">Información Adicional</h5> 
+                <p>Teléfonos: (123) 456-7890, (123) 456-7891, (123) 456-7892</p> 
+                <p>Dirección: Calle La Union 123, Buenaventura, Colombia</p> 
+            </div> 
+        </div>        
+        <div class="text-center"> 
+            © 2024 Derechos Reservados: 
+            <a href="#">PIOGAME</a> 
+        </div> 
+    <div id="aboutUs">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una plataforma dedicada a los amantes de Pokémon, donde puedes encontrar información, explorar y coleccionar tus Pokémon favoritos.</p>
+    </div>
     </footer>
+    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="JS/parsley.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/distMenu.js"></script>
+    <script src="JS/iniciar_sesion.js"></script>
 </body>
+
 </html>
+

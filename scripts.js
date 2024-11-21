@@ -234,3 +234,18 @@ document.getElementById("aboutUsButton").addEventListener("click", function() {
     const aboutUsSection = document.getElementById("aboutUs");
     aboutUsSection.scrollIntoView({ behavior: "smooth" });
 });
+
+
+function mostrarSeccion(seccionId) {
+    const secciones = document.querySelectorAll('main > section');
+    secciones.forEach(seccion => {
+        seccion.classList.remove('visible');
+        seccion.classList.add('hidden');
+    });
+
+    const seccionActiva = document.getElementById(seccionId);
+    if (seccionActiva) {
+        seccionActiva.classList.remove('hidden');
+        seccionActiva.classList.add('visible');
+    }
+}
