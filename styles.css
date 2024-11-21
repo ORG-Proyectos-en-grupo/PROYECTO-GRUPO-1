@@ -284,9 +284,10 @@ element.style {
     position: absolute;
     top: 10%;
     --bs-dropdown-link-active-bg: #fcfbfb;
-
     background-color: #e9e8e8;
 }
+
+
 .overlay-image {
 
     z-index: 2; /* Capa superior */
@@ -297,7 +298,7 @@ element.style {
 }
 
 .barra{
-    background-color: #2beccc;
+    background-color: #2c2e2e;
     
 }
 
@@ -330,10 +331,8 @@ button.other-mode {
     position: absolute;
     right: 40px;
     top: 70px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+    
     z-index: 10;
 }
 .dropdown ul {
