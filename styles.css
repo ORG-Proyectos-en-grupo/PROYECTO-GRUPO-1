@@ -27,7 +27,7 @@ header h1{
     padding:10px;
     margin: 0px;
     justify-content: center;
-    font-size: 70px;
+    font-size: 50px;
     font-family: 'Pokemon';
     color: #FFCC00; /* Color amarillo */
     text-shadow: 2px 2px #000000; /* Sombras similares */
@@ -372,10 +372,12 @@ button.other-mode {
     z-index: 10;
 }
 footer {
-    background-color: rgba(0, 0, 0, 0.2); /* Fondo translúcido */
+    border-radius: 5px;
+    background-color: rgba(248, 248, 248, 0.897); /* Fondo translúcido */
     padding: 3rem;
 }
 footer .container {
+    border-radius: 5px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
