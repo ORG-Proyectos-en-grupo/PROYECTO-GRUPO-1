@@ -85,8 +85,6 @@ aside {
     border-radius: 1%;
 }
 
-
-
 label {
     margin-right: 10px;
 }
@@ -178,7 +176,7 @@ input {
     background-color: rgb(157, 98, 155);
 }
 .modalPokemon.normal-mode{
-    background-color: rgb(117, 103, 69);
+    background-color: rgb(230, 217, 185);
 }
 .modalPokemon.normal_flying-mode{
     background-color: rgb(143, 128, 91);
@@ -192,7 +190,6 @@ input {
 }
 .modalPokemon.electric-mode{
     background-color: rgb(248, 248, 59);
-    background-color: rgb(229, 6, 229);
 }
 .modalPokemon.ground-mode{
     background-color: rgb(231, 178, 33);
@@ -200,7 +197,60 @@ input {
 .modalPokemon.fairy-mode{
     background-color: rgb(255, 158, 255);
 }
-
+.modalPokemon.flying-mode{
+    background-color: rgb(170, 170, 255);
+}
+.modalPokemon.ice-mode{
+    background-color: rgb(0, 170, 255);
+}
+.modalPokemon.ground_poison-mode{
+    background-color: rgb(143, 128, 91);
+}
+.modalPokemon.ghost-mode{
+    background-color: rgb(170, 0, 170);
+}
+.modalPokemon.ghost_poison-mode{
+    background-color: rgb(67, 27, 67);
+}
+.modalPokemon.steel-mode{
+    background-color: rgb(170, 170, 170);
+}
+.modalPokemon.psychic-mode{
+    background-color: rgb(255, 0, 255);
+}
+.modalPokemon.dark-mode{
+    background-color: rgb(85, 85, 85);
+}
+.modalPokemon.dragon-mode{
+    background-color: rgb(83, 118, 214);
+}
+.modalPokemon.fighting-mode{
+    background-color: rgb(255, 126, 40);
+}
+.modalPokemon.rock-mode{
+    background-color: rgb(184, 160, 56);
+}
+.modalPokemon.ground_rock-mode{
+    background-color: rgb(194, 178, 128);
+}
+.modalPokemon.fighting_flying-mode{
+    background-color: rgb(178, 236, 240);
+}
+.modalPokemon.rock_ground-mode{
+    background-color: rgb(194, 178, 128);
+}
+.modalPokemon.water_poison-mode{
+    background-color: rgb(134, 5, 247);
+}
+.modalPokemon.grass_poison-mode{
+    background-color: rgb(149, 196, 102);
+}
+.modalPokemon.electric_steel-mode{
+    background-color: rgb(165, 207, 12);
+}
+.modalPokemon.grass_psychic-mode{
+    background-color: rgb(149, 196, 102);
+}
 .modalPokemon-content {
     background-color: rgb(255, 255, 255);
     width: 400px;

@@ -99,6 +99,8 @@ let pokemons = [
     { name: 'Krabby', id: '098', type: 'Water', image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/098.png', description: 'Es un Pokémon de tipo agua. Tiene una cola y puede nadar.' },
     { name: 'Kingler', id: '099', type: 'Water', image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/099.png', description: 'Es un Pokémon de tipo agua. Es la evolución de Krabby y tiene una cola más larga.' },
     { name: 'Voltorb', id: '100', type: 'Electric', image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/100.png', description: 'Es un Pokémon de tipo eléctrico. Tiene una cola y puede lanzar descargas eléctricas.' },
+    { name: 'Electrode', id: '101', type: 'Electric', image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/101.png', description: 'Es un Pokémon de tipo eléctrico. Es la evolución de Voltorb y tiene una cola más larga.' },
+    { name: 'Exeggcute', id: '102', type: 'Grass/Psychic', image: 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/102.png', description: 'Es un Pokémon de tipo hierba/psíquico. Es un grupo de huevos que pueden lanzar ondas mentales.' },
 ];
 
 
@@ -174,6 +176,50 @@ function showModal(pokemon) {
         modalPokemon.classList.add("ground-mode");
     } else if (pokemon.type === "Fairy"){
         modalPokemon.classList.add("fairy-mode");
+    } else if (pokemon.type === "Flying"){
+        modalPokemon.classList.add("flying-mode");
+    } else if (pokemon.type === "Ice"){
+        modalPokemon.classList.add("ice-mode");
+    } else if (pokemon.type === "Ground/Poison"){
+        modalPokemon.classList.add("ground_poison-mode");
+    } else if (pokemon.type === "Ghost"){
+        modalPokemon.classList.add("ghost-mode");
+    } else if (pokemon.type === "Ghost/Poison"){
+        modalPokemon.classList.add("ghost_poison-mode");
+    } else if (pokemon.type === "Steel"){
+        modalPokemon.classList.add("steel-mode");
+    } else if (pokemon.type === "Psychic"){
+        modalPokemon.classList.add("psychic-mode");
+    } else if (pokemon.type === "Dark"){
+        modalPokemon.classList.add("dark-mode");
+    } else if (pokemon.type === "Dragon"){
+        modalPokemon.classList.add("dragon-mode");
+    } else if (pokemon.type === "Fighting"){
+        modalPokemon.classList.add("fighting-mode");
+    } else if (pokemon.type === "Normal/Psychic"){
+        modalPokemon.classList.add("normal_psychic-mode");
+    } else if (pokemon.type === "Rock"){
+        modalPokemon.classList.add("rock-mode");
+    } else if (pokemon.type === "Rock/Flying"){
+        modalPokemon.classList.add("rock_flying-mode");
+    } else if (pokemon.type === "Rock/Ground"){
+        modalPokemon.classList.add("rock_ground-mode");
+    } else if (pokemon.type === "Rock/Water"){
+        modalPokemon.classList.add("rock_water-mode");
+    } else if (pokemon.type === "Water/Ground"){
+        modalPokemon.classList.add("water_ground-mode");
+    } else if (pokemon.type === "Water/Ice"){
+        modalPokemon.classList.add("water_ice-mode");
+    } else if (pokemon.type === "Rock/Ground") {
+        modalPokemon.classList.add("rock_ground-mode");
+    } else if (pokemon.type === "Water/Poison") {
+        modalPokemon.classList.add("water_poison-mode");
+    } else if (pokemon.type === "Grass/Poison") {
+        modalPokemon.classList.add("grass_poison-mode");
+    } else if (pokemon.type === "Electric/Steel") {
+        modalPokemon.classList.add("electric_steel-mode");
+    } else if (pokemon.type === "Grass/Psychic") {
+        modalPokemon.classList.add("grass_psychic-mode");
     }
     modalName.textContent = pokemon.name;
     modalId.textContent = pokemon.id;
@@ -187,7 +233,7 @@ function showModal(pokemon) {
 closeModalPokemon.addEventListener('click', () => {
     modalPokemon.classList.add("hidden");
     modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "bug_flying-mode", "poison-mode", "bug_poison-mode", "normal-mode",
-        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode");
+        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode", "flying-mode", "ice-mode", "ground_poison-mode", "ghost-mode", "ghost_poison-mode", "steel-mode", "psychic-mode", "dark-mode", "dragon-mode", "fighting-mode", "normal_psychic-mode", "rock-mode", "rock_flying-mode", "rock_ground-mode", "rock_water-mode", "water_ground-mode", "water_ice-mode", "rock_ground-mode", "water_poison-mode", "grass_poison-mode", "electric_steel-mode", "grass_psychic-mode");
 });
 
 sortPokemons.addEventListener('change', (e) => {
