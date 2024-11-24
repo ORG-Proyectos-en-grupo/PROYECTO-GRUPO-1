@@ -47,7 +47,7 @@ header p {
 }
 nav {
     position: relative;
-    top: 60px;
+    top: 80px;
     padding: 20px;
     background-color: rgba(44, 44, 44, 0.968);
 }
@@ -80,7 +80,7 @@ nav {
 
 aside {
     background-color: rgb(255, 255, 255);
-    margin: 85px 20px 40px 20px;
+    margin: 100px 20px 40px 20px;
     padding: 20px;
     border-radius: 1%;
 }
@@ -310,7 +310,6 @@ element.style {
     
 }
 
-
 /* Estilos del modo oscuro */
 body.other-mode {
     background-color: rgb(51, 50, 50);
@@ -423,7 +422,7 @@ footer .text-center a:hover {
     background-color: #ffcc01; /* Color de fondo */
     border: none;
     position: relative;
-    top: 70px;
+    top: 90px;
     left: 25px;
     border-radius: 5px;
     padding: 10px 20px;
