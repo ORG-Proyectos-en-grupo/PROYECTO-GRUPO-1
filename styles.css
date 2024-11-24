@@ -82,7 +82,7 @@ aside {
     background-color: rgb(255, 255, 255);
     margin: 100px 20px 40px 20px;
     padding: 20px;
-    border-radius: 1%;
+    border-radius: 20px;
 }
 
 label {
