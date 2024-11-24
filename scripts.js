@@ -220,6 +220,14 @@ function showModal(pokemon) {
         modalPokemon.classList.add("electric_steel-mode");
     } else if (pokemon.type === "Grass/Psychic") {
         modalPokemon.classList.add("grass_psychic-mode");
+    } else if (pokemon.type === "Water/Fighting") {
+        modalPokemon.classList.add("water_fighting-mode");
+    } else if (pokemon.type === "Bug/Grass") {
+        modalPokemon.classList.add("bug_grass-mode");
+    } else if (pokemon.type === "Poison/Flying") {
+        modalPokemon.classList.add("poison_flying-mode");
+    } else if (pokemon.type === "Normal/Fairy") {
+        modalPokemon.classList.add("normal_fairy-mode");
     }
     modalName.textContent = pokemon.name;
     modalId.textContent = pokemon.id;
@@ -233,7 +241,7 @@ function showModal(pokemon) {
 closeModalPokemon.addEventListener('click', () => {
     modalPokemon.classList.add("hidden");
     modalPokemon.classList.remove("grass-mode", "fire-mode", "water-mode", "bug-mode", "bug_flying-mode", "poison-mode", "bug_poison-mode", "normal-mode",
-        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode", "flying-mode", "ice-mode", "ground_poison-mode", "ghost-mode", "ghost_poison-mode", "steel-mode", "psychic-mode", "dark-mode", "dragon-mode", "fighting-mode", "normal_psychic-mode", "rock-mode", "rock_flying-mode", "rock_ground-mode", "rock_water-mode", "water_ground-mode", "water_ice-mode", "rock_ground-mode", "water_poison-mode", "grass_poison-mode", "electric_steel-mode", "grass_psychic-mode");
+        "normal_flying-mode", "poison_ground-mode", "electric-mode", "ground-mode", "fairy-mode", "flying-mode", "ice-mode", "ground_poison-mode", "ghost-mode", "ghost_poison-mode", "steel-mode", "psychic-mode", "dark-mode", "dragon-mode", "fighting-mode", "normal_psychic-mode", "rock-mode", "rock_flying-mode", "rock_ground-mode", "rock_water-mode", "water_ground-mode", "water_ice-mode", "rock_ground-mode", "water_poison-mode", "grass_poison-mode", "electric_steel-mode", "grass_psychic-mode", "water_fighting-mode", "bug_grass-mode", "poison_flying-mode", "normal_fairy-mode");
 });
 
 sortPokemons.addEventListener('change', (e) => {

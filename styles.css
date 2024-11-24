@@ -251,6 +251,18 @@ input {
 .modalPokemon.grass_psychic-mode{
     background-color: rgb(149, 196, 102);
 }
+.modalPokemon.water_fighting-mode{
+    background-color: rgb(70, 130, 180);
+}
+.modalPokemon.bug_grass-mode{
+    background-color: rgb(124, 252, 0);
+}
+.modalPokemon.poison_flying-mode{
+    background-color: rgb(168, 75, 255);
+}
+.modalPokemon.normal_fairy-mode{
+    background-color: rgb(255, 182, 193);
+}
 .modalPokemon-content {
     background-color: rgb(255, 255, 255);
     width: 400px;
